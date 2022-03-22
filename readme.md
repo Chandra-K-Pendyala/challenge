@@ -19,6 +19,10 @@ test the web page locally by running a container with port 80 and name of the im
 ``` command: docker run -dp 80:80 name:tag ```
 
 If content has to be delivered to larger audiene Kubernetes will be a better option where there is service called horizontal pod scaling when dealing with lot of incoming traffic
+ 
+Push the image built form Dockerfile to docker hub
+
+``` docker push dockerid/name:tag ```
 
 ### Testing ###
 
@@ -27,6 +31,8 @@ This is tested in a local environment using minikube
 For deployment use 
 
 ``` command: kubectl apply -f manifests ``` 
+
+Image in the deployement is pulled form docker hub where pushed to docker in the above step
 
 For hpa require to have metrics-server in order to get resource metrics form the cluster 
 
